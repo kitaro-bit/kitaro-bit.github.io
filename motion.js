@@ -7,6 +7,7 @@
   const en = document.documentElement.lang === 'en';
   const render = () => {
     shell.classList.toggle('motion-paused', paused);
+    document.documentElement.classList.toggle('motion-paused', paused);
     button.setAttribute('aria-pressed', String(paused));
     button.textContent = en
       ? (paused ? 'Play animation ▷' : 'Pause animation Ⅱ')

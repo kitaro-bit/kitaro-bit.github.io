@@ -213,3 +213,18 @@ html[lang=en] .hero-aside .aside-profile h3{font-size:16px;line-height:1.6}
 @media(max-width:900px){.section{padding-block:52px}.about,.career{gap:32px}.fields{font-size:12px;gap:16px}}
 @media(max-width:760px){.hero{padding-bottom:30px}.hero-aside .aside-profile h3{margin-top:0;font-size:16px}.hero-aside .aside-profile .portrait-scope{font-size:13px;margin-top:8px}.hero-aside{padding-top:22px}.news-card{padding:22px}.news-description{font-size:14px}.latest-news{padding-block:34px}}
 @media(max-width:650px){.section{padding:44px 22px}.section h2{font-size:27px;margin:14px 0 20px}.about,.career,.contact{grid-template-columns:1fr;gap:24px}.fields{font-size:12px;gap:6px;padding-block:14px}.prose,.theme p,.partner-intro,.partner-column>p:not(.eyebrow),.partner-column li{font-size:14px}.themes{gap:26px;margin-top:30px}.theme h3{font-size:21px;margin-top:12px}.process{font-size:10px;padding-block:18px}.paper{gap:10px;padding-block:24px}.paper h3{font-size:20px}.timeline li{padding-block:18px}.partner-columns{gap:28px}.contact h2{font-size:32px}.profiles{padding-block:30px}.latest-news{padding:34px 24px}}
+
+/* Long neon trails follow the card frame, with a separate soft glow. */
+@property --news-light-angle{syntax:"<angle>";initial-value:0deg;inherits:false}
+.news-card{box-shadow:0 0 0 1px #527be844,0 0 16px #4168da33,0 0 32px #1c31774d,inset 0 0 16px #365ac41a}
+.news-card::before,.news-card::after{content:'';position:absolute;inset:0;width:auto;height:auto;padding:2px;pointer-events:none;z-index:2;background:conic-gradient(from var(--news-light-angle),transparent 0deg 175deg,#1c317733 195deg,#4978e599 230deg,#739cff 265deg,var(--news-accent) 295deg,#e5f7ff 316deg,#ffffff 323deg,var(--news-accent) 330deg,transparent 344deg 360deg);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;animation:news-border-light 12s linear infinite}
+.news-card::before{padding:4px;filter:blur(4px);opacity:.5;box-shadow:none}
+.news-card::after{filter:drop-shadow(0 0 1.5px #91baff);opacity:.65}
+.news-paper::before,.news-paper::after{animation-delay:-6s}
+@keyframes news-border-light{to{--news-light-angle:360deg}}
+html.motion-paused .news-card::before,html.motion-paused .news-card::after{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.news-card::before,.news-card::after{animation:none;background:linear-gradient(135deg,#739cffcc,#739cff33 55%,#8bd5ff99)}}
+
+/* Subtle rounded corners keep the neon frame continuous. */
+.news-card{border-radius:10px}
+.news-card::before,.news-card::after{border-radius:inherit}
