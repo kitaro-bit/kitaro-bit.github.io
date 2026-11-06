@@ -132,3 +132,24 @@ html.circuit-mode .circuit-toggle>span{grid-column:2;grid-row:1}
 .circuit-toggle-status.is-recovering strong{color:#ffdc9f;text-shadow:0 0 8px #dda75a88}
 html.motion-paused .circuit-car-outline{animation-play-state:paused}
 @media(prefers-reduced-motion:reduce){.circuit-car-outline{animation:none!important}}
+
+/* Physical pit-sign boards: black panels, coarse LED dots, strong numbers and short signals. */
+html.circuit-mode .latest-heading .eyebrow::before{content:'PIT BOARD / '}
+html.circuit-mode .pitwall-status{display:block!important;padding:0;margin:0 -22px 24px;background:none;border:0}
+.pit-sign{position:relative;padding:19px 22px 17px;border:7px solid #28344c;background:radial-gradient(circle at 7px 7px,#a2b0c2 0 2px,transparent 2.5px),radial-gradient(circle at calc(100% - 7px) 7px,#a2b0c2 0 2px,transparent 2.5px),radial-gradient(circle at 7px calc(100% - 7px),#a2b0c2 0 2px,transparent 2.5px),radial-gradient(circle at calc(100% - 7px) calc(100% - 7px),#a2b0c2 0 2px,transparent 2.5px),#030506;box-shadow:inset 0 0 0 1px #76839a88,inset 0 0 30px #000;color:#d5ef80}
+.news-paper .pit-sign{color:#a5e9ff}
+.pit-sign-head{display:grid;grid-template-columns:76px minmax(0,1fr);gap:20px;align-items:center;padding-bottom:18px;border-bottom:2px solid #313a45}
+.pit-sign-number{padding-right:17px;border-right:2px solid #313a45;color:#f0f7ff}
+.pit-sign-number .pit-dot-text{height:48px;width:100%}
+.pit-sign-series .pit-dot-text{height:28px;max-width:190px;width:100%}
+.pit-sign-series small{display:block;color:#8193a8;font:500 8px/1.4 ui-monospace,monospace;letter-spacing:1px;margin-top:10px}
+.pit-dot-text{display:block;overflow:visible;fill:currentColor;filter:drop-shadow(0 0 2px currentColor);max-width:100%}
+.pit-sign-status{padding:20px 0 18px;border-bottom:2px solid #313a45}
+.pit-sign-status .pit-dot-text{width:100%;height:37px}
+.pit-sign-date{color:#d6e5f7;padding-top:17px}
+.pit-sign-date .pit-dot-text{width:100%;height:20px}
+html.circuit-mode .pitwall-board{display:none!important}
+html.circuit-mode .pitwall-console{padding:16px 22px;background:#080e1a;border-top-width:2px}
+.pitwall-wordmark{font-size:29px;letter-spacing:-1px}
+.pitwall-console-bottom{margin-top:12px;padding-top:10px}
+@media(max-width:760px){html.circuit-mode .pitwall-status{margin:0 -16px 22px}.pit-sign{padding:19px 18px 16px;border-width:6px}.pit-sign-head{grid-template-columns:65px minmax(0,1fr);gap:16px}.pit-sign-number{padding-right:13px}.pit-sign-number .pit-dot-text{height:44px}.pit-sign-series .pit-dot-text{height:25px}.pit-sign-series small{font-size:7px;letter-spacing:.5px}.pit-sign-status .pit-dot-text{height:31px}.pit-sign-date .pit-dot-text{height:18px}.pitwall-wordmark{font-size:25px}}
