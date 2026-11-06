@@ -150,7 +150,13 @@
   const icon='<svg viewBox="0 0 40 26" aria-hidden="true"><path d="M5 8 Q2 2 11 3 L21 8 Q25 10 28 5 Q32 1 36 8 L37 14 Q38 17 31 19 L23 23 Q18 25 17 20 L16 15 L9 17 Q5 18 3 14 Z"/></svg>';
   const label=document.createElement('span');toggle.innerHTML=icon;toggle.append(label,passing);
   const setMode=on=>{root.classList.toggle('circuit-mode',on);lastDrivingFrame=0;if(!on)finishSpin();cancelAnimationFrame(checkpointFrame);if(on)checkpointFrame=requestAnimationFrame(updateCheckpoints);deck.hidden=!on;background.inert=!on;passing.hidden=!on;if(on)queueReadingMask();toggle.setAttribute('aria-expanded',String(on));toggle.setAttribute('aria-pressed',String(on));label.textContent=on?'EXIT CIRCUIT ×':'DISCOVER THE CIRCUIT ↗';toggle.setAttribute('aria-label',en?(on?'Exit circuit mode':'Discover the circuit: reveal three research-inspired details'):(on?'サーキットモードを終了':'サーキットを発見：３つの研究の仕掛けを表示'));if(diagram)diagram.setAttribute('aria-label',on?(en?'Illustrative telemetry of human, robotics and data coordination':'人・ロボット・データの協調を表すテレメトリー概念図'):originalLabel);};
-  toggle.addEventListener('click',()=>setMode(!root.classList.contains('circuit-mode')));
+  toggle.addEventListener('click',()=>{
+    const on=!root.classList.contains('circuit-mode');setMode(on);
+    if(on){
+      deck.tabIndex=-1;deck.focus({preventScroll:true});
+      requestAnimationFrame(()=>deck.scrollIntoView({behavior:reducedMotion.matches?'instant':'smooth',block:'start'}));
+    }
+  });
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&root.classList.contains('circuit-mode')){setMode(false);toggle.focus();}});
   document.body.append(toggle);setMode(false);
 })();
