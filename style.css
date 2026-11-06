@@ -34,3 +34,115 @@ p,li{line-break:strict;overflow-wrap:break-word;text-wrap:pretty}h1,h2,h3{text-w
 
 /* Inquiry examples match the questions prospective partners bring. */
 .consultations{margin-top:3rem;border-top:1px solid #739cf944;padding-top:1.6rem}.consultations h3{font-size:1.15rem;margin:0 0 1rem}.consultations details{border-bottom:1px solid #739cf933;padding:1.1rem 0}.consultations summary{cursor:pointer;color:#e5efff;font-weight:600;line-height:1.8}.consultations summary:focus-visible{outline:2px solid #79c9ff;outline-offset:5px}.consultations details p{max-width:70ch;line-height:1.9;color:#b6c4de;margin:1rem 0 .3rem}
+
+/* Unpublished latest-research layout concept. */
+.latest-news{position:relative;padding-top:58px;padding-bottom:56px;background:linear-gradient(130deg,#12224088,transparent 68%)}
+.latest-heading{display:flex;align-items:end;justify-content:space-between;gap:32px;margin-bottom:28px}.latest-heading h2{font-size:29px;margin:12px 0 0}.latest-caption{font-size:12px;line-height:1.9;color:#aabbd9}.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.news-card{position:relative;display:flex;flex-direction:column;min-width:0;border:1px solid #597ab34d;background:linear-gradient(145deg,#182c4d99,#0c1424cc);padding:26px 28px 20px;box-shadow:0 8px 26px #00000014;overflow:hidden}.news-card:before{content:'';position:absolute;inset:0 auto auto 0;width:72px;height:2px;background:#77d6ff;box-shadow:0 0 18px #77d6ff77}.news-grant:before{background:#9cafff;box-shadow:0 0 18px #8b9fff77}.news-meta{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:25px}.news-type{font-size:9px;letter-spacing:1.8px;color:#8edcff;font-weight:650}.news-grant .news-type{color:#b0bfff}.news-meta time{font-size:10px;color:#9badc8}.news-category{font-size:11px;color:#b5c7e6;margin-bottom:8px}.news-card h3{font-size:21px;line-height:1.65;letter-spacing:.1px;font-weight:550;text-wrap:balance;color:#f0f5ff}.news-placeholder{font-size:12px;color:#a9c0e4;margin-top:14px}.news-description{font-size:12px;line-height:1.95;color:#aebbd1;margin-top:12px;margin-bottom:26px;max-width:42ch}.news-footer{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:15px;border-top:1px solid #739cf92b;padding-top:16px;font-size:10px;color:#a1b2d0}.news-link{font-size:11px;color:#d9edff;white-space:nowrap}.news-link span{margin-left:12px}.news-review-note{font-size:10px;color:#8f9fb8;margin-top:20px;line-height:1.8}.site-header nav{gap:23px}
+@media(max-width:650px){.latest-news{padding:40px 24px}.latest-heading{display:block}.latest-heading h2{font-size:25px}.latest-caption{margin-top:14px}.news-grid{grid-template-columns:1fr;gap:18px}.news-card{padding:24px 22px 18px}.news-card h3{font-size:20px}.news-meta{margin-bottom:20px}.site-header nav{gap:12px}}
+
+/* V2: content and collaboration lead; orbital graphic is secondary. */
+.hero{grid-template-columns:minmax(0,1.45fr) minmax(250px,.8fr);padding-top:52px;padding-bottom:46px;gap:54px;align-items:start}.hero h1{font-size:clamp(32px,3.4vw,44px);margin-top:20px;margin-bottom:18px}.hero-intro{font-size:14px;line-height:1.95;max-width:39em;text-wrap:pretty}.identity{margin:24px 0}.hero-aside{border-left:1px solid #789aee33;padding-left:30px;margin-top:9px}.aside-profile{display:flex;gap:20px;align-items:center}.aside-profile>img{width:112px;height:112px;object-fit:cover;flex-shrink:0;border:1px solid #6b85b355}.aside-profile h3{font-size:19px;line-height:1.55;font-weight:500;margin:10px 0}.aside-profile p:not(.eyebrow){font-size:10px;color:#afbed6;line-height:1.9}.aside-profile .eyebrow{font-size:8px;letter-spacing:1.2px}.aside-note{font-size:13px;color:#c5d7f1;line-height:1.9;margin:23px 0 12px}.hero .visual-shell{max-width:168px;margin:18px 0 0 auto;opacity:.65}.hero .visual{padding:8px;border:none;background:transparent;box-shadow:none;transform:none}.hero .visual svg{margin:0}.hero .visual-top,.hero .visual-bottom{display:none}.hero .motion-toggle{font-size:8px;padding:3px 0;margin-top:0}.hero .visual::before{display:none}.fields{font-size:14px;padding-block:15px}.latest-news{padding-top:40px;padding-bottom:40px}.latest-heading{margin-bottom:24px}.latest-heading h2{font-size:27px}.news-card{padding:23px 24px 18px}.news-meta{margin-bottom:18px}.news-card h3{font-size:20px;line-height:1.6}.news-description{margin-bottom:22px}.draft-label{font-size:9px;color:#b9c7df;border:1px solid #739cf944;border-radius:20px;padding:2px 8px}.hero .button{font-size:12px}.hero .text-link{margin-left:18px;font-size:11px}.news-link{color:#d9edff}.hero-aside .visual text{font-size:12px}
+@media(max-width:1000px){.hero{gap:26px;grid-template-columns:minmax(0,1.35fr) minmax(220px,.85fr);padding-inline:26px}.hero-aside{padding-left:22px}.aside-profile{gap:13px;align-items:start}.aside-profile>img{width:82px;height:82px}.aside-profile h3{font-size:16px}.hero .text-link{margin:15px 0 0;display:block}.hero .visual-shell{max-width:140px}}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding:35px 24px 30px;gap:26px}.hero-aside{display:grid;grid-template-columns:1fr 112px;gap:12px 15px;border-left:none;border-top:1px solid #789aee33;padding:24px 0 0;margin-top:0;align-items:center}.aside-profile{grid-row:1 / 3;align-items:center}.aside-profile>img{width:90px;height:90px}.aside-profile h3{font-size:18px}.aside-note{grid-column:1 / -1;margin:0;font-size:12px}.hero .visual-shell{grid-column:2;grid-row:1 / 3;width:110px;max-width:110px;margin:0;opacity:.5}.hero h1{font-size:34px}.news-grid{grid-template-columns:1fr}.latest-heading{display:block}.latest-caption{margin-top:10px}.latest-news{padding:32px 24px}.news-card h3{font-size:21px}}
+@media(max-width:390px){.hero h1{font-size:30px}.aside-profile>img{width:72px;height:72px}.aside-profile{gap:10px}.aside-profile h3{font-size:16px}.hero-aside{grid-template-columns:1fr 88px}.hero .visual-shell{width:88px}.news-card{padding-inline:20px}}
+
+/* Heading-side orbit: a compact accent beside the opening statement. */
+.hero-heading{display:flex;align-items:center;gap:12px;width:fit-content;max-width:100%}
+.hero .hero-heading h1{flex:0 1 auto;white-space:nowrap;text-wrap:initial;letter-spacing:-1.6px}
+.hero .hero-heading .visual-shell{flex:0 0 124px;width:124px;max-width:124px;margin:13px 0 0;opacity:.62;align-self:center}
+.hero-aside{display:block}.aside-profile{grid-row:auto}.aside-note{margin:23px 0 0}
+.news-bibliography{font-size:12px;line-height:1.8;color:#afbed6;margin:15px 0;overflow-wrap:anywhere;text-wrap:pretty}
+.news-bibliography a{text-decoration:none}.news-bibliography a:hover{text-decoration:underline}
+.news-bibliography span{display:block;font-size:10px;margin-top:8px;color:#91a7cc}
+.news-meta time{font:10px ui-monospace,SFMono-Regular,monospace;letter-spacing:.8px;color:#a5b8d8}
+.news-footer{gap:12px;flex-wrap:wrap}.news-card h3{text-wrap:pretty}
+@media(min-width:761px) and (max-width:1100px){.hero .hero-heading h1{font-size:30px}.hero .hero-heading .visual-shell{flex-basis:88px;width:88px;max-width:88px}}
+@media(max-width:760px){.hero .hero-heading h1{font-size:clamp(24px,6.5vw,34px);letter-spacing:-1.2px}.hero .hero-heading .visual-shell{flex-basis:88px;width:88px;max-width:88px;grid-column:auto;grid-row:auto;margin:12px 0 0}.hero-aside{display:block;padding-top:22px}.aside-profile{align-items:center}.aside-note{margin-top:16px}.news-card h3 br{display:none}}
+@media(max-width:480px){.hero-heading{gap:8px}.hero .hero-heading .visual-shell{flex-basis:72px;width:72px;max-width:72px}.hero .hero-heading .motion-toggle{font-size:7px;white-space:nowrap}.hero .hero-heading h1{letter-spacing:-1.4px}}
+
+html[lang=ja] .hero .hero-heading h1{text-wrap:nowrap;white-space:nowrap} .hero .hero-heading .visual-shell{transform:translateY(18px)}
+@media(max-width:760px){html[lang=ja] .hero .hero-heading h1{font-size:clamp(24px,6.5vw,34px)}}
+
+/* Match the orbital drawing itself to the two-line heading. */
+.hero .hero-heading{--headline-size:clamp(22px,3.4vw,44px);gap:16px;align-items:center;margin:20px 0 32px}
+html[lang=ja] .hero .hero-heading h1{font-size:var(--headline-size);line-height:1.45;margin:0}
+.hero .hero-heading .visual-shell{position:relative;flex:0 0 calc(var(--headline-size) * 3.8666667);width:calc(var(--headline-size) * 3.8666667);max-width:none;height:calc(var(--headline-size) * 2.9);margin:0;transform:none;opacity:1;align-self:center}
+.hero .hero-heading .visual{padding:0;margin:0;height:100%;background:none;overflow:visible}
+.hero .hero-heading .visual svg{display:block;width:100%;height:100%;max-height:none;margin:0}
+.hero .hero-heading .motion-toggle{position:absolute;top:100%;left:50%;transform:translateX(-50%);margin:5px 0 0;font-size:8px;white-space:nowrap}
+@media(max-width:1100px) and (min-width:761px){.hero .hero-heading{--headline-size:clamp(22px,2.8vw,30px);gap:12px}}
+@media(max-width:760px){.hero .hero-heading{--headline-size:clamp(20px,6vw,34px);gap:12px}.hero .hero-heading .visual-shell{grid-column:auto;grid-row:auto}}
+@media(max-width:480px){.hero .hero-heading{gap:8px}.hero .hero-heading .motion-toggle{font-size:7px}}
+
+/* Readable concept diagram: labels stay at a legible size rather than shrinking with SVG. */
+.hero .hero-heading .connection-diagram{position:relative;isolation:isolate;overflow:visible;border:0;background:none}
+.hero .hero-heading .connection-diagram svg{position:absolute;inset:0;opacity:.85}
+.connection-diagram .diagram-node{position:absolute;z-index:1;padding:2px 4px;background:#112345;border:1px solid #6d9eda;border-radius:5px;color:#f2f8ff;font-size:13px;font-weight:600;line-height:1.5;white-space:nowrap;letter-spacing:0}
+.diagram-person{top:0;left:0}.diagram-robot{top:0;right:0}.diagram-data{bottom:0;left:50%;transform:translateX(-50%)}
+.connection-diagram .diagram-center{position:absolute;top:42%;left:50%;transform:translate(-50%,-50%);font-size:12px;font-weight:500;line-height:1.5;color:#c8e5ff;letter-spacing:1px}
+.connection-dot{offset-path:path('M24 17 L158 17 L100 103 Z');animation:connection-flow 9s linear infinite;filter:drop-shadow(0 0 3px #9ddfff)}
+@keyframes connection-flow{to{offset-distance:100%}}
+.motion-paused .connection-dot{animation-play-state:paused}
+.hero .hero-heading .motion-toggle{font-size:10px;margin-top:7px}
+@media(max-width:480px){.connection-diagram .diagram-node{font-size:12px;padding:1px 3px}.connection-diagram .diagram-center{font-size:11px}.hero .hero-heading .motion-toggle{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.connection-dot{animation:none}}
+
+/* Original orbital artwork; readable labels are separate from the scaled SVG. */
+.hero .hero-heading .orbital-diagram{position:relative;isolation:isolate;overflow:visible;padding:0;height:100%;border:0;background:none}
+.hero .hero-heading .orbital-diagram svg{display:block;width:100%;height:100%;opacity:1}
+.orbital-diagram>span{position:absolute;z-index:1;color:#e6f4ff;background:#0d1830d9;padding:1px 3px;font-size:13px;font-weight:500;line-height:1.5;letter-spacing:0;white-space:nowrap;text-shadow:0 0 8px #061025}
+.orbit-person{left:0;top:0}.orbit-robot{right:0;top:0}.orbit-data{left:50%;bottom:0;transform:translateX(-50%)}
+.orbital-diagram>.orbit-core-label{left:50%;top:50%;transform:translate(-50%,-50%);font-size:12px;background:transparent;padding:0}
+@media(max-width:480px){.orbital-diagram>span{font-size:12px}.orbital-diagram>.orbit-core-label{font-size:12px}}
+
+/* Latest research: Science Blue foundation with a restrained neon backlight. */
+.latest-news{background:radial-gradient(ellipse at 20% 50%,#1c31773d,transparent 68%),linear-gradient(130deg,#12224088,transparent 68%)}
+.news-grid{gap:28px}
+.news-card{--news-accent:#91aeff;border:1px solid #7295ed99;background:radial-gradient(ellipse at 0 0,#1c317799,transparent 72%),linear-gradient(145deg,#14213feF,#0b1428);box-shadow:0 0 0 1px #1c317766,0 0 20px #4168da38,0 0 48px #1c31775c,inset 0 1px 22px #365ac426;transition:border-color .25s,box-shadow .25s}
+.news-paper{--news-accent:#8bd5ff}
+.news-card:before{inset:0 0 auto;width:auto;height:2px;background:linear-gradient(90deg,#1c3177,var(--news-accent),#1c3177);box-shadow:0 0 12px var(--news-accent),0 0 24px #557fe880}
+.news-card:after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 0,#648dff12,transparent 58%)}
+.news-card>*{position:relative;z-index:1}
+.news-card:hover,.news-card:focus-within{border-color:#a4bfff;box-shadow:0 0 0 1px #648dff33,0 0 26px #4168da55,0 0 58px #1c31777a,inset 0 1px 24px #365ac433}
+.news-type{color:var(--news-accent);text-shadow:0 0 13px #739cff66}.news-grant .news-type{color:var(--news-accent)}
+.news-category{color:#c9d8f2}.news-card h3{color:#f4f8ff}.news-description{color:#bccbe3}
+@media(prefers-reduced-motion:reduce){.news-card{transition:none}}
+
+/* English labels with recognizable line icons, retaining the original orbital artwork. */
+.hero .hero-heading .visual-shell{flex-basis:max(166px,calc(var(--headline-size) * 3.8666667));width:max(166px,calc(var(--headline-size) * 3.8666667))}
+.orbital-diagram>.orbit-person,.orbital-diagram>.orbit-robot,.orbital-diagram>.orbit-data{display:flex;align-items:center;gap:4px;font-size:12px;line-height:1.5;padding:1px 2px;color:#d9ecff;background:#0d1830bd}
+.orbital-diagram>span b{font-weight:500;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.3px}
+.hero .hero-heading .orbital-diagram .orbit-symbol{position:static;display:block;flex:0 0 17px;width:17px;height:19px;max-height:none;margin:0;color:#a7d8ff}
+.orbit-person{left:0;top:-3px}.orbit-robot{right:0;top:-3px}.orbit-data{bottom:-1px}
+.orbital-diagram>.orbit-core-label{font:500 12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.2px;color:#f5faff}
+@media(max-width:480px){.hero .hero-heading .visual-shell{flex-basis:max(120px,calc(var(--headline-size) * 3.8666667));width:max(120px,calc(var(--headline-size) * 3.8666667))}.orbital-diagram>.orbit-person,.orbital-diagram>.orbit-robot,.orbital-diagram>.orbit-data{gap:2px;font-size:12px;padding-inline:0}.hero .hero-heading .orbital-diagram .orbit-symbol{width:12px;height:15px;flex-basis:12px}.orbital-diagram>span b{letter-spacing:0}.orbital-diagram>.orbit-core-label{font-size:11px}}
+
+/* Approved wording, with two readable lines at the orbital center. */
+.orbital-diagram>.orbit-core-label{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:72px;height:36px;padding:3px 6px;background:radial-gradient(ellipse,#28458eeF,#142858ee);border:1px solid #8fb6ff77;border-radius:50%;font-size:12px;line-height:1.15;letter-spacing:0;text-align:center;box-shadow:0 0 12px #507eff26}
+.orbit-core-label>span{display:block}
+@media(max-width:480px){.orbital-diagram>.orbit-core-label{font-size:12px}}
+
+.hero-scope{font-size:13px;line-height:1.95;color:#b4c6e3;max-width:42em;margin-top:14px;text-wrap:pretty}
+
+.research-scope{font-size:14px;line-height:1.95;color:var(--muted);max-width:62em;margin-top:14px;text-wrap:pretty}@media(max-width:650px){.research-scope{font-size:13px}}
+
+/* Final bilingual review: readable English heading and balanced navigation. */
+html[lang=en] .hero .hero-heading{--headline-size:clamp(25px,2.7vw,35px)}
+html[lang=en] .hero .hero-heading h1{font:400 var(--headline-size)/1.45 Georgia,serif;letter-spacing:-.6px;margin:0;white-space:nowrap;text-wrap:nowrap}
+html[lang=en] .aside-profile h3{font-size:18px;line-height:1.5;text-wrap:pretty}
+html[lang=en] .identity h2{font-size:20px;letter-spacing:.4px}
+html[lang=en] .hero .text-link{margin:14px 0 0;display:block}
+html[lang=en] .news-card h3{font:500 21px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:0}
+html[lang=en] .news-footer{align-items:flex-start}
+html[lang=en] .news-grant .news-footer{justify-content:flex-start;gap:8px 22px}
+.official-project-title{font-size:12px!important;color:#afbed6!important}
+html[lang=en] .site-header nav{gap:17px}
+@media(min-width:761px) and (max-width:1100px){html[lang=en] .hero .hero-heading{--headline-size:clamp(20px,2.3vw,25px)}}
+@media(max-width:760px){html[lang=en] .hero .hero-heading{--headline-size:clamp(20px,5.5vw,32px)}html[lang=en] .hero .hero-heading h1{letter-spacing:-.8px}html[lang=en] .site-header nav{gap:12px;font-size:11px}html[lang=en] .latest-heading h2{font-size:26px}}
+@media(max-width:480px){html[lang=en] .hero .hero-heading{--headline-size:20px;gap:8px}html[lang=en] .hero .hero-heading h1{font-size:20px;letter-spacing:-.8px}.news-description{max-width:none}}
+@media(max-width:360px){html[lang=en] .hero{padding-inline:16px}html[lang=en] .hero .hero-heading{--headline-size:18px;gap:6px}html[lang=en] .hero .hero-heading h1{font-size:18px;letter-spacing:-1px}}
+
+@media(max-width:480px){html[lang=en] .site-header nav{gap:8px;font-size:10px}html[lang=en] .hero .hero-heading{margin-bottom:42px}html[lang=en] .orbital-diagram>.orbit-person,html[lang=en] .orbital-diagram>.orbit-robot{top:-10px}html[lang=en] .orbital-diagram>.orbit-data{bottom:-10px}html[lang=en] .hero .hero-heading .motion-toggle{margin-top:14px}}
+
+@media(max-width:480px){.hero .hero-heading{margin-bottom:42px}.orbital-diagram>.orbit-person,.orbital-diagram>.orbit-robot{top:-10px}.orbital-diagram>.orbit-data{bottom:-10px}.hero .hero-heading .motion-toggle{margin-top:14px}}
+@media(max-width:360px){html[lang=ja] .hero{padding-inline:16px}html[lang=ja] .hero .hero-heading{--headline-size:17px;gap:6px}}
