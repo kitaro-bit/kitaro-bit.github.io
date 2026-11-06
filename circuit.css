@@ -1,0 +1,134 @@
+
+/* An optional motorsport-inspired layer. The research site remains the default. */
+.circuit-background{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0;transition:opacity .8s;overflow:hidden}
+.circuit-background svg{width:100%;height:100%;object-fit:cover;color:#80a9ff}
+html.circuit-mode .circuit-background{opacity:.2}
+.circuit-track{stroke-dasharray:45 1200;animation:circuit-lap 24s linear infinite;filter:drop-shadow(0 0 6px #8bd5ff)}
+@keyframes circuit-lap{to{stroke-dashoffset:-1245}}
+.circuit-toggle{position:fixed;right:22px;bottom:22px;z-index:30;border:1px solid #7f96c277;border-radius:6px;padding:11px 15px;color:#d4e3ff;background:#0b1532ed;box-shadow:0 4px 22px #0005;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:1px;cursor:pointer;display:flex;align-items:center;gap:10px}
+.circuit-toggle svg{width:29px;height:19px;stroke:#98b8ff;fill:none;stroke-width:2}
+.circuit-toggle:hover,.circuit-toggle[aria-pressed=true]{border-color:#a8dfff;box-shadow:0 0 20px #4d7cff44}
+.circuit-toggle:focus-visible{outline:2px solid #b1e5ff;outline-offset:4px}
+.circuit-deck[hidden]{display:none}
+.circuit-deck{position:relative;z-index:1;margin:0 48px 30px;padding:30px;border:1px solid #7f96c266;border-radius:10px;background:linear-gradient(125deg,#1c3177bb,#091427f5);display:grid;grid-template-columns:1fr 1.15fr;gap:32px;animation:circuit-enter .55s ease-out}
+@keyframes circuit-enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.circuit-deck .eyebrow{font-size:10px;color:#a5caff;letter-spacing:2px;margin:0 0 14px}
+.circuit-deck h2{font-size:25px;font-weight:500;line-height:1.6;margin:0 0 14px;color:#f0f5ff}
+.circuit-deck p{font-size:14px;line-height:1.9;color:#c5d2e9;margin:0 0 12px}
+.circuit-deck .circuit-note{font-size:11px;line-height:1.7;color:#97accb;margin:16px 0 0}
+.circuit-telemetry{border-left:1px solid #7f96c244;padding-left:28px}
+.telemetry-row{display:grid;grid-template-columns:92px 1fr;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid #7f96c229}
+.telemetry-row b{font:500 11px/1.4 ui-monospace,monospace;letter-spacing:.4px;color:#d2e0ff}
+.telemetry-row svg{display:block;width:100%;height:40px;overflow:hidden}
+.telemetry-row path{fill:none;stroke:var(--trace);stroke-width:2;stroke-linecap:round}
+.telemetry-row .trace-light{stroke:white;stroke-width:2.5;stroke-dasharray:14 500;animation:telemetry-flow 8s linear infinite}
+@keyframes telemetry-flow{to{stroke-dashoffset:-514}}
+.mini-telemetry{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;gap:9px;background:linear-gradient(135deg,#1c3177aa,#091427dd);border:1px solid #7f96c277;border-radius:6px;padding:10px}
+.mini-telemetry span{display:flex;align-items:center;gap:6px;font:500 10px/1.2 ui-monospace,monospace;color:#d2e0ff}
+.mini-telemetry svg{width:100%;height:17px;margin:0!important;min-width:0}
+.mini-telemetry small{font:500 8px/1.2 ui-monospace,monospace;letter-spacing:1px;color:#a1c5ff}
+html.circuit-mode .mini-telemetry{display:flex}
+html.circuit-mode .orbital-diagram>svg,html.circuit-mode .orbital-diagram>span{visibility:hidden}
+html.circuit-mode .orbital-diagram .mini-telemetry{visibility:visible}
+html.circuit-mode .latest-heading .eyebrow::before{content:'PIT WALL / ';color:#c0e7ff}
+.pitwall-status{display:none!important}
+html.circuit-mode .pitwall-status{display:flex!important;justify-content:space-between;gap:12px;align-items:center;padding:0 0 15px;margin-bottom:17px;border-bottom:1px solid #7f96c24d;font:500 10px/1.5 ui-monospace,monospace;letter-spacing:1px;color:#b9cdf2}
+.pitwall-status strong{display:flex;align-items:center;gap:7px;color:#b3f2e3;font-weight:500}
+.pitwall-status strong::before{content:'';height:5px;width:5px;border-radius:50%;background:#b3f2e3;box-shadow:0 0 8px #b3f2e377;flex-shrink:0}
+html.circuit-mode .news-card{background:repeating-linear-gradient(0deg,transparent 0 27px,#7f96c208 28px),linear-gradient(140deg,#1c3177cc,#0b1428)}
+html.circuit-mode .news-grant{border-top:3px solid #a7baff}
+html.circuit-mode .news-paper{border-top:3px solid #8bd5ff}
+html.motion-paused .circuit-track,html.motion-paused .trace-light{animation-play-state:paused}
+@media(max-width:760px){.circuit-deck{margin:0 24px 26px;padding:23px;grid-template-columns:1fr;gap:20px}.circuit-telemetry{border-left:0;border-top:1px solid #7f96c244;padding:20px 0 0}.circuit-deck h2{font-size:22px}.circuit-toggle{bottom:14px;right:14px;font-size:10px;padding:10px 12px}.mini-telemetry{gap:5px;padding:6px}.mini-telemetry span{font-size:8px}.mini-telemetry small{font-size:7px}.mini-telemetry svg{height:12px}.telemetry-row{grid-template-columns:80px 1fr}.pitwall-status{letter-spacing:0}}
+@media(prefers-reduced-motion:reduce){.circuit-track,.trace-light,.circuit-deck{animation:none}.circuit-background{transition:none}}
+
+/* Version 2: a recognizable circuit, travelling line-art car and scrolling monitors. */
+html.circuit-mode .circuit-background{opacity:.58}
+.circuit-background svg{filter:drop-shadow(0 0 8px #527fe744)}
+.circuit-car{offset-distance:0%;offset-rotate:auto;offset-anchor:0px 0px;animation:formula-lap 22s linear infinite;filter:drop-shadow(0 0 3px #81deff) drop-shadow(0 0 8px #4b99ff)}
+@keyframes formula-lap{to{offset-distance:100%}}
+.circuit-map{position:relative;margin:0 0 18px;border:1px solid #7f96c266;border-radius:6px;background:#060f23;overflow:hidden}
+.circuit-map>svg{display:block;width:100%;height:245px}
+.circuit-map-label{display:flex;justify-content:space-between;gap:8px;padding:9px 12px;border-bottom:1px solid #7f96c244;color:#b5d4ff;font:500 9px/1.4 ui-monospace,monospace;letter-spacing:1px}
+.circuit-map-label span{color:#7894c0}
+.circuit-deck{background:linear-gradient(120deg,#172c62fa,#091427fa)}
+.circuit-telemetry{display:flex;flex-direction:column;justify-content:center}
+.telemetry-row{padding:18px 0;grid-template-columns:105px minmax(0,1fr)}
+.telemetry-row b{font-size:12px}
+.telemetry-row b small{display:block;font:400 8px/1.5 ui-monospace,monospace;color:#8ea8cf;letter-spacing:.7px;margin-top:6px}
+.telemetry-row svg{height:65px;background:repeating-linear-gradient(0deg,transparent 0 15px,#7f96c21f 16px),repeating-linear-gradient(90deg,transparent 0 27px,#7f96c215 28px);border-block:1px solid #7295ed22}
+.wave-scroll{animation:monitor-wave var(--wave-duration,5s) linear infinite;filter:drop-shadow(0 0 2px var(--trace))}
+.wave-scroll path{stroke:var(--trace);stroke-width:2;fill:none;stroke-linejoin:round}
+@keyframes monitor-wave{to{transform:translateX(-420px)}}
+.monitor-sweep{stroke:#dbf6ff!important;stroke-width:1!important;opacity:.55}
+.mini-telemetry .wave-scroll path{stroke-width:3.5}
+.mini-telemetry span{font-size:10px}
+.mini-telemetry svg{background:repeating-linear-gradient(90deg,transparent 0 15px,#7f96c21f 16px);border-bottom:1px solid #7295ed33}
+.pitwall-console,.pitwall-board{display:none}
+html.circuit-mode .pitwall-console{display:block;margin:0 0 20px;border:1px solid #7295ed99;border-top:4px solid #8bd5ff;background:#070f23;box-shadow:0 0 25px #1c317788;padding:20px 24px}
+.pitwall-console-top,.pitwall-console-bottom{display:flex;justify-content:space-between;gap:16px;align-items:center}
+.pitwall-wordmark{font:750 italic 38px/1 ui-monospace,monospace;letter-spacing:-2px;color:#edf5ff}
+.pitwall-pill{padding:7px 10px;border:1px solid #7295ed77;color:#a1ceff;font:500 11px/1.2 ui-monospace,monospace;letter-spacing:1px}
+.pitwall-console-bottom{margin-top:18px;padding-top:12px;border-top:1px solid #7295ed44;color:#9fb6db;font:500 10px/1.6 ui-monospace,monospace;letter-spacing:1px}
+.pitwall-console-bottom>span:last-child{display:flex;align-items:center;gap:8px;white-space:nowrap}
+.pitwall-console-bottom i{width:7px;height:7px;background:#9de8d4;border-radius:50%;box-shadow:0 0 8px #9de8d477}
+html.circuit-mode .news-grid{gap:20px;padding:18px;background:#030919;border:1px solid #7f96c255;border-radius:8px;box-shadow:inset 0 0 30px #0008}
+html.circuit-mode .news-card{border-radius:3px!important;padding:0 22px 22px;border:1px solid #7295ed99;border-top:0;background:repeating-linear-gradient(0deg,transparent 0 3px,#7f96c208 4px),#0b1730;box-shadow:inset 0 0 30px #0006,0 0 15px #1c317755}
+html.circuit-mode .pitwall-status{margin:0 -22px 20px;padding:17px 20px;justify-content:start;gap:14px;background:linear-gradient(110deg,#263d83,#14244a);border-bottom:2px solid var(--news-accent)}
+.pit-channel{font:700 43px/1 ui-monospace,monospace;color:#e0eeff;letter-spacing:-3px}
+.pit-channel-info{display:flex;flex-direction:column;gap:8px}
+.pit-channel-info small{font-size:8px;letter-spacing:1px;color:#c2d4f6}
+.pit-channel-info strong{font-size:15px!important;letter-spacing:1px}
+.pit-flag{margin-left:auto;writing-mode:vertical-rl;font-size:9px;letter-spacing:2px;color:#9fb8e9}
+html.circuit-mode .pitwall-board{display:block;margin:20px 0;padding:12px;background:#030a18;border:1px solid #7f96c24d;font:400 10px/1.7 ui-monospace,monospace}
+.pitwall-board>div:not(.pitwall-progress){display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px solid #7f96c22b}
+.pitwall-board span{color:#8da4cc;font-size:9px}
+.pitwall-board b{color:#c9dcff;font-size:10px;font-weight:500;text-align:right}
+.pitwall-progress{padding-top:12px}
+.pitwall-progress>div{display:flex;gap:3px;margin-top:7px}
+.pitwall-progress i{height:5px;flex:1;background:var(--news-accent);box-shadow:0 0 4px #8bd5ff33}
+html:not(.circuit-mode) .circuit-car,html:not(.circuit-mode) .wave-scroll,html.motion-paused .circuit-car,html.motion-paused .wave-scroll{animation-play-state:paused}
+@media(max-width:760px){html.circuit-mode .circuit-background{opacity:.4}.circuit-map>svg{height:240px}.circuit-deck{padding:20px}.telemetry-row{grid-template-columns:84px minmax(0,1fr);padding:12px 0}.telemetry-row svg{height:52px}.telemetry-row b{font-size:11px}.mini-telemetry span{font-size:8px}.pitwall-wordmark{font-size:30px}.pitwall-pill{font-size:8px;padding:6px}.pitwall-console-top{gap:8px}html.circuit-mode .pitwall-console{padding:18px 16px}.pitwall-console-bottom{font-size:8px;letter-spacing:0;flex-wrap:wrap}html.circuit-mode .news-grid{padding:10px;gap:16px}html.circuit-mode .news-card{padding:0 16px 20px}html.circuit-mode .pitwall-status{margin-inline:-16px;padding:15px;gap:12px}.pit-channel{font-size:37px}.pit-channel-info strong{font-size:13px!important}.pit-channel-info small{font-size:7px;letter-spacing:.5px}}
+@media(prefers-reduced-motion:reduce){.circuit-car,.wave-scroll{animation:none}}
+
+.mini-telemetry{overflow:hidden}.mini-telemetry svg{overflow:hidden!important;flex:1;min-width:0}.mini-telemetry .wave-scroll{filter:none}
+
+/* Corner names light up at the car's actual position, in the backdrop and overview. */
+.circuit-checkpoint text{fill:#abc7f4;transition:fill .2s;letter-spacing:1.5px}
+.checkpoint-plate{fill:#081329;stroke:#7f96c255;stroke-width:1;opacity:.7;transition:fill .2s,stroke .2s,opacity .2s}
+.checkpoint-connector{fill:none;stroke:#a8eeff;stroke-width:2;opacity:0;transition:opacity .15s}
+.checkpoint-ring,.checkpoint-pulse{fill:none;stroke:#a8eeff;stroke-width:3;opacity:0;transform-box:fill-box;transform-origin:center}
+.circuit-checkpoint.is-passing text{fill:#fff;filter:drop-shadow(0 0 4px #b9f6ff) drop-shadow(0 0 12px #67bcff)}
+.circuit-checkpoint.is-passing .checkpoint-plate{fill:#1c3177;stroke:#bbf0ff;stroke-width:2;opacity:1;filter:drop-shadow(0 0 9px #62b9ff)}
+.circuit-checkpoint.is-passing .checkpoint-ring,.circuit-checkpoint.is-passing .checkpoint-connector{opacity:1;filter:drop-shadow(0 0 6px #90e2ff)}
+.circuit-checkpoint.is-passing .checkpoint-pulse{animation:checkpoint-arrival 1.5s ease-out both}
+@keyframes checkpoint-arrival{0%{opacity:1;transform:scale(.65)}100%{opacity:0;transform:scale(1.8)}}
+.circuit-passing{display:flex;justify-content:space-between;gap:12px;padding:11px 12px;border-top:1px solid #7f96c244;background:#081329;font:500 10px/1.5 ui-monospace,monospace;letter-spacing:1px;color:#7f96c2}
+.circuit-passing strong{font-weight:600;color:#bbd3fa;transition:color .2s,text-shadow .2s}
+.circuit-passing.is-passing strong{color:#efffff;text-shadow:0 0 9px #8bd5ff,0 0 18px #739cff}
+html.motion-paused .checkpoint-pulse{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.checkpoint-pulse{animation:none!important}.circuit-checkpoint text,.checkpoint-plate,.checkpoint-connector,.circuit-passing strong{transition:none}}
+
+
+/* Fixed background with a DOM-aware reading mask: artwork lives only in free space. */
+.circuit-background{position:fixed;inset:0;z-index:0;height:auto;opacity:0;visibility:hidden;pointer-events:none;background:none;border:0;overflow:hidden;transition:opacity .5s}
+html.circuit-mode .circuit-background{height:auto;opacity:.58;visibility:visible;pointer-events:none;border:0}
+.circuit-background>svg{display:block;width:100%;height:100%;padding:0;filter:none}
+.checkpoint-obscured{visibility:hidden}
+html.circuit-mode .circuit-toggle{display:grid;grid-template-columns:29px auto;gap:4px 10px}
+html.circuit-mode .circuit-toggle>svg{grid-column:1;grid-row:1 / 3}
+html.circuit-mode .circuit-toggle>span{grid-column:2;grid-row:1}
+.circuit-toggle-status[hidden]{display:none}
+.circuit-toggle-status{grid-column:2;grid-row:2;padding:0;border:0;background:none;gap:10px;justify-content:space-between;font-size:8px;letter-spacing:.7px;min-width:140px}
+.circuit-toggle-status strong{font-size:9px}
+.circuit-deck{background:linear-gradient(120deg,#172c62,#091427)}
+@media(max-width:760px){html.circuit-mode .circuit-background{opacity:.48}.circuit-toggle-status{min-width:130px;font-size:7px}.circuit-toggle-status strong{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.circuit-background{transition:none}}
+
+/* A rare, brief run-wide and recovery; no impact or flashing effects. */
+.circuit-car.is-spinning{animation-play-state:paused}
+.circuit-car.is-spinning .circuit-car-outline{animation:circuit-recover 1.8s cubic-bezier(.4,0,.2,1) both;stroke:#c9eaff;transform-origin:0 0;transform-box:view-box}
+@keyframes circuit-recover{0%{transform:translate(0,0) rotate(0deg)}25%{transform:translate(16px,44px) rotate(110deg)}55%{transform:translate(12px,62px) rotate(300deg)}78%{transform:translate(5px,38px) rotate(360deg)}100%{transform:translate(0,0) rotate(360deg)}}
+.circuit-toggle-status.is-recovering strong{color:#ffdc9f;text-shadow:0 0 8px #dda75a88}
+html.motion-paused .circuit-car-outline{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.circuit-car-outline{animation:none!important}}
